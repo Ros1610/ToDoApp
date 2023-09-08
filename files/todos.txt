@@ -1,2 +1,5 @@
-helloHello
-How are you doing?
+Write a program
+Find bugs in the program
+Fix the bugs
+Rerun the program
+Share the program
