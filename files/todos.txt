@@ -1,4 +1,2 @@
-Go for a walk
-Write a program
-Test the program
-Share the program
+helloHello
+How are you doing?
