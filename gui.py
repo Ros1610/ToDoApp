@@ -1,5 +1,10 @@
 import PySimpleGUI as sg
 import functions
+import os
+
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", "w") as file:
+        pass
 
 todos = functions.read_file()
 
@@ -13,9 +18,13 @@ edit_button = sg.Button("Edit")
 delete_button = sg.Button("Delete")
 exit_button = sg.Button("Save & Exit")
 
+left_col_cont = [[label_todo],[input_box],[todos_list]]
+right_col_cont = [[add_button],[edit_button],[delete_button],[exit_button]]
+left_column = sg.Column(left_col_cont)
+right_column = sg.Column(right_col_cont)
+
 window = sg.Window("My To-Do App",
-                   layout=[[label_todo], [input_box, add_button, edit_button],
-                           [todos_list, delete_button], [exit_button]],
+                   layout=[[left_column, right_column]],
                    font=("Helvetica", 11))
 
 while True:
